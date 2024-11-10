@@ -1,19 +1,10 @@
-# Core Django dependencies
 asgiref==3.8.1
 Django==5.1.1
 django-environ==0.11.2
-
-# Data processing and math libraries
-numpy==1.24.0               # Approx. 20-30 MB
-scipy==1.10.1               # Approx. 60 MB (needed for seasonality functions)
-scikit-learn==1.1.1         # Approx. 40 MB (used for Linear Regression)
-
-# Plotting libraries
-matplotlib==3.5.3           # Approx. 50 MB (required for plots)
-pillow==8.4.0               # Approx. 5 MB (for image processing in matplotlib)
-
-# Additional Django support dependencies
-sqlparse==0.4.3             # Approx. 90 KB (required by Django)
-tzdata==2022.7              # Approx. 200 KB (timezone data for datetime operations)
-
-# Base64 encoding and HTTP response handling (already included with Django)
+numpy==1.24.0                # Smaller version
+scipy==1.10.1                # Smaller version
+scikit-learn==1.1.1          # Minimal scikit-learn
+matplotlib==3.5.3            # Slimmer matplotlib version
+pillow==8.4.0                # Basic pillow
+sqlparse==0.4.3              # Needed by Django
+tzdata==2022.7               # Minimal timezone data
