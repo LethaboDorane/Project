@@ -3,6 +3,7 @@ Django==5.1.1           # ~7 MB
 django-environ==0.11.2  # ~50 KB
 Jinja2==3.1.4           # ~500 KB
 MarkupSafe==3.0.1       # ~30 KB
+pillow==10.4.0
 python-dateutil==2.9.0  # ~300 KB
 sqlparse==0.5.1         # ~90 KB
 pytz==2024.2            # ~200 KB
