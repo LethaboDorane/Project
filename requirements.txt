@@ -8,3 +8,4 @@ matplotlib==3.5.3            # Slimmer matplotlib version
 pillow==8.4.0                # Basic pillow
 sqlparse==0.4.3              # Needed by Django
 tzdata==2022.7               # Minimal timezone data
+whitenoise==6.4.0
