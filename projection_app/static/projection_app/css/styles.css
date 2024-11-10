@@ -491,3 +491,48 @@ textarea {
 #back-to-top:hover {
     background-color: #555;
 }
+
+/* Responsive container for the graph */
+.graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 100%; /* Ensures it adapts to screen width */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.graph-container img {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section styles for projection results */
+#results-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    #results-section {
+        padding: 15px;
+    }
+
+    .graph-container {
+        padding: 0; /* Remove extra padding on smaller screens */
+    }
+
+    /* Full-width buttons for smaller screens */
+    button.btn {
+        width: 100%;
+    }
+}
