@@ -68,7 +68,6 @@ def sales_projection_view(request):
             else:
                 trend = "Stagnant"
 
-
             # Generate future periods for the projection
             future_X = np.arange(len(sales) + 1, len(sales) + periods + 1).reshape(-1, 1)
             future_sales = model.predict(future_X).flatten()
@@ -83,7 +82,7 @@ def sales_projection_view(request):
             graph_type = form.cleaned_data['graph_type']
             create_sales_graph(ax, graph_type, sales_with_seasonality, future_sales_noisy, X, future_X, periods, "Month", expenses)
 
-            # Save plot to a buffer
+            # Save plot to a buffer and store it in the session
             buf = BytesIO()
             plt.savefig(buf, format='png')
             buf.seek(0)
@@ -91,6 +90,8 @@ def sales_projection_view(request):
             buf.close()
 
             graph = base64.b64encode(image_png).decode('utf-8')
+            request.session['graph_data'] = graph  # Store graph data in session for downloading
+
             future_sales_list = [(f"Month {i}", f"{sale:.2f}") for i, sale in enumerate(future_sales_noisy, start=len(sales) + 1)]
 
             return render(request, 'projection_app/sales_projection.html', {
