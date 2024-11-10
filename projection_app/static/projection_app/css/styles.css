@@ -504,7 +504,7 @@ textarea {
 }
 
 .graph-container img {
-    max-width: 100%; /* Makes the image responsive */
+    max-width: 90%; /* Makes the image responsive */
     height: auto; /* Maintains aspect ratio */
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -512,7 +512,7 @@ textarea {
 
 /* Section styles for projection results */
 #results-section {
-    width: 100%;
+    width: 90%;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -533,6 +533,6 @@ textarea {
 
     /* Full-width buttons for smaller screens */
     button.btn {
-        width: 100%;
+        width: 90%;
     }
 }
