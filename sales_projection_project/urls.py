@@ -24,17 +24,6 @@ urlpatterns = [
     path('', include('projection_app.urls')),  # Include app URLs
 ]
 
-# sales_projection_project/urls.py
-
-from django.urls import path
-from projection_app import views
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.sales_projection, name='sales_projection'),
-    #path('quarterly-projection/', views.quarterly_projection, name='quarterly_projection'),  # URL for quarterly projection page
-]
-
 # Use static() to serve media and static files during development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
