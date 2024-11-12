@@ -32,7 +32,7 @@ from projection_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.sales_projection, name='sales_projection'),
-    path('quarterly-projection/', views.quarterly_projection, name='quarterly_projection'),  # URL for quarterly projection page
+    #path('quarterly-projection/', views.quarterly_projection, name='quarterly_projection'),  # URL for quarterly projection page
 ]
 
 # Use static() to serve media and static files during development
