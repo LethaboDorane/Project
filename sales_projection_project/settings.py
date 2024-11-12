@@ -58,14 +58,18 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 ROOT_URLCONF = 'sales_projection_project.urls'
+# sales_projection_project/settings.py
+
+import os
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'projection_app', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                # Default processors
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -74,6 +78,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'sales_projection_project.wsgi.application'
 
