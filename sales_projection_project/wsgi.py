@@ -11,11 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-# sales_projection_project/wsgi.py
-import matplotlib
-matplotlib.use('Agg')  # Use non-interactive backend suitable for web servers
-import matplotlib.pyplot as plt
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sales_projection_project.settings')
 
 application = get_wsgi_application()
