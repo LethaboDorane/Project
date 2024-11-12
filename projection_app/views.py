@@ -11,9 +11,6 @@ from django.http import HttpResponse
 # projection_app/views.py
 from django.shortcuts import render
 
-def quarterly_projection(request):
-    return render(request, 'projection_app/quarterly_projection.html')
-
 # Function to simulate seasonality effect with an offset for starting month
 def add_seasonality(sales, months, amplitude=0.1, period=12, start_month=1):
     seasonal_effect = amplitude * np.sin(2 * np.pi * (np.arange(len(sales) + months) + (start_month - 1)) / period)
@@ -143,3 +140,8 @@ def download_graph(request):
         return response
     else:
         return HttpResponse("No graph available for download.", status=404)
+
+
+def quarterly_projection(request):
+    return render(request, 'projection_app/quarterly_projection.html')
+
