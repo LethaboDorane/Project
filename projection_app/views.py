@@ -141,7 +141,3 @@ def download_graph(request):
     else:
         return HttpResponse("No graph available for download.", status=404)
 
-
-def quarterly_projection(request):
-    return render(request, 'projection_app/quarterly_projection.html')
-
