@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Projection</title>
-    <!-- Load static files -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'projection_app/css/styles.css' %}">
 </head>
@@ -32,6 +31,13 @@
     
     <main>
         <h1>Sales Projection Tool</h1>
+        
+        <!-- Button to Quarterly Projection Tool on GitHub -->
+        <div>
+            <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/projection_app/templates/projection_app/quarterly_projection.html" 
+               target="_blank" class="btn">Access Quarterly Projection Tool</a>
+        </div>
+        
         <!-- Sales Form -->
         <section id="form-section">
             <form method="post">
@@ -41,13 +47,10 @@
             </form>
         </section>
 
-        <!-- Display Graph and Results if Available -->
         {% if graph %}
             <section id="results-section">
                 <h2>Projection Results</h2>
                 <p><strong>Trend:</strong> The results show a {{ trend }} trend.</p>
-                
-                <!-- Display Projected Sales List if Available -->
                 {% if future_sales_list %}
                     <h3>Projected Sales</h3>
                     <ul>
@@ -56,26 +59,19 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-                
-                <!-- Display Graph -->
                 <div class="graph-container">
                     <img src="data:image/png;base64,{{ graph }}" alt="Sales Projection Graph">
                 </div>
-                
-                <!-- Download Button -->
                 <form action="{% url 'download_graph' %}" method="get">
                     <button type="submit" class="btn">Download Image (PNG)</button>
                 </form>                
-        
             </section>
         {% endif %}
     </main>
 
-    <!-- Back to Top Button -->
     <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
 
     <script>
-        // Show the button when the user scrolls down 200px
         window.onscroll = function() {
             const topButton = document.getElementById("back-to-top");
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -85,7 +81,6 @@
             }
         };
 
-        // Scroll to the top when the button is clicked
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
