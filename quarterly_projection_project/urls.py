@@ -18,10 +18,9 @@ Including another URLconf
 # quarterly_projection_project/urls.py
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('quarterly_projection_app.urls')),
-
+    path('quarterly/', include('quarterly_projection_app.urls')),  # Include this line
+    path('', include('projection_app.urls')),  # Include other apps as needed
 ]
