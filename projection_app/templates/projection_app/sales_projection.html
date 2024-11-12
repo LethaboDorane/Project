@@ -12,7 +12,7 @@
     <header>
         <div class="logo-nav">
             <a href="https://quant-solutions.co.za/" target="_blank">
-            <img src="{% static 'projection_app/images/newlogo.png' %}" alt="Quantitative Solutions Logo" class="logo">
+                <img src="{% static 'projection_app/images/newlogo.png' %}" alt="Quantitative Solutions Logo" class="logo">
             </a>
             <nav>
                 <ul>
@@ -32,6 +32,11 @@
     
     <main>
         <h1>Sales Projection Tool</h1>
+
+        <!-- Button to Access Quarterly Projection Tool -->
+        <div style="margin-bottom: 20px;">
+            <a href="{% url 'quarterly_projection_app:projection' %}" class="btn">Go to Quarterly Projection Tool</a>
+        </div>
         
         <!-- Sales Form -->
         <section id="form-section">
